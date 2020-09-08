@@ -1,0 +1,110 @@
+
+.news-list{
+  &__container{
+    padding: 0 6.6%;
+    @include mq(){
+      padding: 0 5%;
+    }
+  }
+  &__typelist{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 100px;
+    @include mq(){
+      justify-content: space-between;
+      padding-bottom: 50px;
+    }
+  }
+  &__type{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    letter-spacing: 0.35em;
+    width: 280px;
+    margin: 0 30px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid;
+    @include mq(){
+      width: 47%;
+      margin: 0;
+      font-size: 1.4rem;
+      padding-bottom: 20px;
+    }
+  }
+  &__pager{
+    display: block;
+    text-align: center;
+    margin: 60px 0;
+    @include mq(){
+      display: inline-block;
+      margin-top: 40px;
+    }
+  }
+  &__page{
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    color:white;
+    line-height: 50px;
+    margin: 0 auto;
+    @include mq(){
+      height: 40px;
+      width: 40px;
+      line-height: 40px;
+    }
+  }
+  &__container{
+    .news__list{
+      .news__item:nth-child(2){
+        margin-top: 60px;
+        @include mq(){
+          margin-top: 0;
+        }
+      }
+      .news__item:nth-child(3){
+        margin-top: 120px;
+        @include mq(){
+          margin-top: 0;
+        }
+      }
+      @include mq(){
+        margin-bottom: 20px;
+        width: 100%;
+      }
+    }
+    .news__item{
+      display: inline-block;
+      font-size: 1.3rem;
+      @include mq(){
+        margin-bottom: 20px;
+      }
+    }
+    .news__category{
+      display: inline-block;
+      padding-left: 10px;
+      @include mq(){
+        font-size: 1.2rem;
+        display: inline-block;
+      }
+    }
+    .news__name{
+      @include mq(){
+        font-size: 1.4rem;
+      }
+    }
+    .news__txtarea{
+      width: 100%;
+      @include mq(){
+        width: 60%;
+      }
+    }
+  }
+}
+.news__img-newsp{
+  height: 50vw;
+  min-height: 400px;
+  img{
+    height: 100%;
+  }
+}

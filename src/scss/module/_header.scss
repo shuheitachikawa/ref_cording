@@ -1,0 +1,284 @@
+@import '../mixin/media-query';
+
+.header{
+  font-family: メイリオ, Meiryo, "Hiragino Sans", ヒラギノ角ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: relative;
+  &__container{
+    height: 162px;
+    width: 100%;
+    padding: 60px 9.15% 60px 4.4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    z-index: 999;
+    @include mq() {
+      width: 100%;
+      height: 110px;
+      padding: 30px 5.66%;
+    }
+  }
+  &__logo{
+    height: 100%;
+    opacity: 0;
+    animation: fade 0.2s linear forwards 1.0s;
+    img{
+      height: 100%;
+      width: auto;
+      @include mq() {
+        width: 130px;
+        height: auto;
+        margin-top: 15px;
+      }
+    }
+  }
+  &__menu{
+    @include mq() {
+      display: none;
+    }
+    ul{
+      padding-right: 50px;
+    }
+    li{
+      float:left;
+      display: list-item;
+      line-height: 1.5;
+      margin-left: 35px;
+      font-size: 1.6rem;
+      font-weight: 500;
+      overflow: hidden;
+      a{
+        transform:translateY(40px);
+      }
+      &:nth-child(1) a{
+        animation: slide-up 0.6s cubic-bezier(0.76, 0.09, 0.215, 1) forwards 0.8s;
+      }
+      &:nth-child(2) a{
+        animation: slide-up 0.6s cubic-bezier(0.76, 0.09, 0.215, 1) forwards 0.9s;
+      }
+      &:nth-child(3) a{
+        animation: slide-up 0.6s cubic-bezier(0.76, 0.09, 0.215, 1) forwards 1.0s;
+      }
+      &:nth-child(4) a{
+        animation: slide-up 0.6s cubic-bezier(0.76, 0.09, 0.215, 1) forwards 1.1s;
+      }
+      &:nth-child(5) a{
+        animation: slide-up 0.6s cubic-bezier(0.76, 0.09, 0.215, 1) forwards 1.2s;
+      }
+      &:nth-child(6) a{
+        animation: slide-up 0.6s cubic-bezier(0.76, 0.09, 0.215, 1) forwards 1.3s;
+      }
+      &:nth-child(7) a{
+        animation: slide-up 0.6s cubic-bezier(0.76, 0.09, 0.215, 1) forwards 1.4s;
+      }
+    }
+
+  }
+  &__trigger{
+    width: 50px;
+    height: 50px;
+    z-index: 20000;
+    pointer-events: auto;
+    cursor: pointer;
+    position: fixed;
+    right: 4.4%;
+    top: 56px;
+    transition:.3s;
+    @include mq() {
+      right:4%;
+      top:30px;
+    }
+    span{
+      position: absolute;
+      left: 5px;
+      width: 40px;
+      height: 2px;
+      background: #333333;
+      opacity: 0.6;
+      transition: all .3s;
+      @include mq() {
+        width: 30px;
+        left:10px;
+      }
+    }
+    span:nth-of-type(1){
+      top:17px;
+      animation: menuTrigger 4s infinite forwards;
+    }
+    span:nth-of-type(2){
+      top:25px;
+      animation: menuTrigger 4s infinite forwards .1s;
+    }
+    span:nth-of-type(3){
+      bottom:16px;
+      animation: menuTrigger 4s infinite forwards .2s;
+    }
+    &.open span:nth-of-type(1) {
+      animation:none;
+      transform: rotate(-45deg);
+      top:25px;
+    }
+    &.open span:nth-of-type(2) {
+      animation:none;
+      opacity: 0;
+    }
+    &.open span:nth-of-type(3) {
+      animation:none;
+      transform: rotate(45deg);
+      bottom:23px;
+    }
+
+  }
+  &__smenu{
+    opacity:0;
+    pointer-events: none;
+    z-index: 10000;
+    background-color:#fff3e2;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    transition:.3s;
+    .smenu__link{
+      transform:translateY(40px);
+    }
+    &.open{
+      opacity:1;
+      pointer-events: auto;
+      .header__smenu--img::after{
+        width: 0;
+      }
+      .smenu__link{
+        animation: slide-up 0.6s cubic-bezier(0.76, 0.09, 0.215, 1) forwards 0.35s;
+      }
+    }
+    &--img{
+      position: absolute;
+      left:0;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      img{
+        height: 100%;
+        width: auto;
+      }
+      @include mq(){
+        width: 30%;
+      }
+      &::after{
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #FFFFFF;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: all .4s cubic-bezier(0.02, 0.95, 0.4, 1);
+      }
+    }
+    &--menu{
+      position: absolute;
+      right:0;
+      width: 43%;
+      height: 100%;
+      @include mq(){
+        width: 55%;
+      }
+      nav{
+        line-height: 2;
+        width: 50%;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        @include mq() {
+          width: 100%;
+          position: static;
+          transform: translateY(0);
+          padding: 70px 0 20px;
+        }
+        ul{
+          li{
+            font-size: 2.6rem;
+            margin: 12px 0;
+            letter-spacing: 0.35em;
+            overflow: hidden;
+            @include mq() {
+              font-size: 1.8rem;
+              margin: 10px 0;
+            }
+            span{
+              font-size: 1.4rem;
+              margin-right: 15px;
+              letter-spacing: 0.2em;
+            }
+          }
+      }
+      }
+    }
+    &--insta{
+      width: 25px;
+      height: 25px;
+      display: block;
+      width: 25px;
+      position: absolute;
+      right: 8.7%;
+      bottom: 90px;
+      opacity: 0.4;
+      @include mq(){
+        width: 20px;
+        position: static;
+        right: 8.7%;
+        bottom: 90px;
+        opacity: 0.4;
+        margin-bottom: 15px;
+      }
+    }
+    &-list{
+      font-weight: 300;
+      position: absolute;
+      right:8%;
+      bottom:40px;
+      @include mq{
+        position: static;
+      }
+      li{
+        float: left;
+        margin-left: 20px;
+        @include mq{
+          margin-left: 0;
+          margin-right: 20px;
+        }
+        a{
+          transition: all .2s;
+        }
+      }
+      li.copyright{
+        color:#ffcb83;
+      }
+    }
+  }
+}
+
+
+
+
+//シングルページで色変更
+.single{
+  header{
+    .header__menu{
+      color:white;
+    }
+    .header__trigger{
+      span{
+        background-color: white;
+      }
+      &.open{
+        span{
+          background: #333333;
+        }
+      }
+    }
+  }
+}

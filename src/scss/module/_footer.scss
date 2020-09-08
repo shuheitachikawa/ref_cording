@@ -1,0 +1,220 @@
+@import '../mixin/media-query';
+
+.footer{
+  @include mq(){
+    padding: 40px 5.66% 80px;
+  }
+  background: #fff3e2;
+  padding: 80px 6.588% 90px;
+  .contact{
+    width: 100%;
+    height: 240px;
+    background: #ffffff;
+    position: relative;
+    text-align: center;
+    margin-bottom: 70px;
+    @include mq(){
+      margin-bottom: 45px;
+      height: 160px;
+      line-height: 2;
+      //padding: 5px 10% 0;
+      box-sizing: border-box;
+    }
+    a{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      &::before{
+        background: #fa0;
+        top: 0;
+        transform-origin: right bottom;
+        content: "";
+        width: 100%;
+        height: 0;
+        position: absolute;
+        left: 0;
+        transition: all .6s;
+        transform: skewY(4deg);
+      }
+      &::after{
+        background: #ffcb83;
+        bottom: 0;
+        transform-origin: left top;  
+        content: "";
+        width: 100%;
+        height: 0;
+        position: absolute;
+        left: 0;
+        transition: all .6s;
+        transform: skewY(4deg);      
+      }
+      &:hover::before, &:hover::after{
+        height: 180%;
+      }
+      &:hover .contact__title{
+        color:white;
+        z-index: 10;
+      }
+    }
+    &__title{
+      padding: 15px 0 60px;
+      background: url(../img/arrow.png) center bottom no-repeat;
+      background-size: 39px auto;
+      padding: 15px 0 60px;
+      @include mq(){
+        background: url(../img/arrow-sp.png) center bottom no-repeat;
+        background-size: 33px auto;
+        padding: 0 0 45px;
+      }
+      &--ja{
+        padding-bottom: 10px;
+        font-size: 1.6rem;
+        letter-spacing: 0.37em;
+        text-align: center;
+        @include mq(){
+          padding: 0 0 3px;
+          font-size: 1.2rem;
+        }
+      }
+      &--en{
+        font-family: メイリオ, Meiryo, "Hiragino Sans", ヒラギノ角ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.55em;
+        font-size: 2.8rem;
+        line-height: 1.5;
+        @include mq(){
+          padding: 0;
+          font-size: 2rem;
+          letter-spacing: 0.4em;
+        }
+      }
+    }
+  }
+  &__area{
+    display: flex;
+    justify-content: space-between;
+    @include mq(){
+      padding: 0 3%;
+      flex-direction: column-reverse;
+    }
+  }
+  &__left{
+    width: 340px;
+    @include mq(){
+      width: 100%;     
+    }
+  }
+  &__logo{
+    margin-bottom: 30px;
+    @include mq(){
+      width: 280px;     
+      margin-bottom: 20px;
+    }
+  }
+  p{
+    font-size: 1.2rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+  }
+  &__snav{
+    margin-top: 50px;
+    @include mq(){
+      margin-top: 30px;    
+    }
+    ul{
+      display: flex;
+      justify-content: start;
+      @include mq(){
+        margin-bottom: 20px;  
+      }
+      li{
+        font-family: メイリオ, Meiryo, "Hiragino Sans", ヒラギノ角ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin-right: 40px;
+        font-size: 1.4rem;
+        @include mq(){
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+  &__right{
+    position: relative;
+    @include mq(){
+      font-size: 1.4rem;
+      margin-bottom: 40px;
+    }
+  }
+  &__menu{
+    max-width: 600px;
+    display: inline-block;
+    @include mq(){
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    ul{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      li{
+        width: 110px;
+        position: relative;
+        margin: 0 90px 30px 0;
+        font-family: メイリオ, Meiryo, "Hiragino Sans", ヒラギノ角ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        line-height: 2;
+        @include mq(){
+          width: 50%;
+          margin: 0 0 30px 0;
+        }
+        a{
+          display: block;
+          position: relative;
+          @include mq(){
+            width: 70%;
+          }
+          &::after{
+            position: absolute;
+            content: "";
+            width: 25px;
+            height: 1px;
+            background: #1c1f22;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            @include mq(){
+              width: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__insta{
+    display: inline-block;
+    vertical-align: top;
+    width: 25px;
+    height: 25px;
+    @include mq(){
+     display: block;
+    }
+  }
+  &__copyright{
+    position: absolute;
+    bottom: 0;
+    right:0;
+    letter-spacing: 0.12em;
+    font-family: メイリオ, Meiryo, "Hiragino Sans", ヒラギノ角ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    line-height: 2;
+    color: #999999;
+    @include mq(){
+      left:0;
+      bottom:-270px;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@import '../mixin/scroll-area';
+
+.p-title{
+  height: 460px;
+  text-align: center;
+  position: relative;
+  font-family: メイリオ, Meiryo, "Hiragino Sans", ヒラギノ角ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  @include mq(){
+    width: 100%;
+    height: 320px;
+    text-align: center;
+    position: relative;
+    font-family: メイリオ, Meiryo, "Hiragino Sans", ヒラギノ角ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  &__txtarea{
+    width: 100%;
+    position: absolute;
+    top:50%;
+    @include mq(){
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      padding-top: 5px;
+    }
+  }
+  &__title{
+    font-size: 7.2rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.4em;
+    overflow: hidden;
+    @include mq(){
+      font-size: 10vw;
+      letter-spacing: 0.60em;
+    }
+    span{
+      display: block;
+      transform: translateY(80px);
+      padding-left: 0.75em;
+      animation: ttl-up 0.8s cubic-bezier(0.76, 0.09, 0.215, 1) forwards 0.4s;
+    }
+  }
+  &__sub{
+    letter-spacing: 0.25em;
+    padding: 30px 0 30px 0;
+    position: relative;
+    font-size: 1.2rem;
+    opacity: 0;
+    animation: fade 0.2s linear forwards 0.8s;
+    @include mq(){
+      letter-spacing: 0.25em;
+      padding: 25px 0 0;
+      font-size: 0.9rem;
+    }
+  }
+  .scroll{
+    @include _scroll-area(240px, 5.66%);
+    z-index: 1000;
+    @include mq(){
+      top:280px;
+    }
+  }
+}

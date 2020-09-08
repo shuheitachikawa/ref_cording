@@ -1,0 +1,15 @@
+
+.back-imgarea{
+  height: 80vh;
+  background-image: url(../img2/2018-09-02_20-58-47_000.jpg);
+  background-size: cover;
+  background-position-y: 31.6px;
+  background-position-x: center;
+  background-attachment: fixed;
+  background-repeat:none;
+  @include mq() {
+    height: 420px;
+    background-attachment: scroll;
+    background-size: auto 120%;
+  }
+}

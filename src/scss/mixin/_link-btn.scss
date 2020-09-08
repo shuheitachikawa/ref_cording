@@ -1,0 +1,120 @@
+
+
+@mixin _link-btn(){
+  display: inline-block;
+  width: 360px;
+  line-height: 65px;
+  text-align: right;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: #f28c00;
+  color: #FFFFFF;
+  letter-spacing: 0.2em;
+  box-sizing: border-box;
+  transition: .2s;
+  &-line{
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: #FFFFFF;
+    position: absolute;
+    right: 45px;
+    top: 50%;
+    transition: .2s;
+    @include mq() {
+      width: 20px;
+      right: 20px;
+    }
+  }
+  &::before{
+    position: absolute;
+    display: block;
+    content:"";
+    width: 0;
+    height: 1px;
+    background-color:#f28c00;
+    transition: all .2s ease-out;
+  }
+  &::after{
+    position: absolute;
+    display: block;
+    content:"";
+    width: 0;
+    height: 1px;
+    background-color:#f28c00;
+    transition: all .2s ease-out;
+    right:0;
+    bottom:0;
+  }
+  &-bd{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding-right: 95px;
+    transition: .2s;
+    &:hover{
+      padding-right: 115px;
+    }
+    @include mq() {
+      padding-right: 58px;
+    }
+  }
+  &-bd::before{
+    position: absolute;
+    display: block;
+    content:"";
+    height: 0;
+    width: 1px;
+    background-color:#f28c00;
+    transition: all .2s ease-out;
+    left:0;
+    bottom:0;
+  }
+  &-bd::after{
+    position: absolute;
+    display: block;
+    content:"";
+    height: 0;
+    width: 1px;
+    background-color:#f28c00;
+    transition: all .2s ease-out;
+    top:0;
+    right:0;
+  }
+  &:hover{
+    background: rgba(28,31,34,0.00);
+    color: #f28c00;
+    opacity:1;
+  }
+  &:hover .link-btn-line{
+    width: 50px;
+    background: #f28c00;
+  }
+  &:hover::before{
+    width: 100%;
+    transition-delay: .1s;
+  }
+  &:hover::after{
+    width: 100%;
+    transition-delay: .3s;
+  }
+  &:hover .link-btn-bd::before{
+    height: 100%;
+    transition-delay: .4s;
+  }
+  &:hover .link-btn-bd::after{
+    height: 100%;
+    transition-delay: .2s;
+  }
+  @include mq() {
+    width: 235px;
+    line-height: 51px;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+}
+

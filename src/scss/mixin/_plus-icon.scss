@@ -1,0 +1,22 @@
+
+
+@mixin _plus-icon(){
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin: 40px 60px;
+  &::before, &::after{
+    content: "";
+    width: 30px;
+    height: 4px;
+    background: #1c1f22;
+    position: absolute;
+    left: 0;
+    top: 13px;
+    transform-origin: center center;
+  }
+  &::after{
+    transform:rotate(90deg);
+  }
+}
+

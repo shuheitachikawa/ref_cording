@@ -1,0 +1,1039 @@
+  @import '../mixin/link-btn';
+
+
+.mask{
+  @include mq(){
+    padding-left: 100px;
+  }
+}
+.init-image{
+  @include mq(){
+    transform:scale(0.6);
+  }
+}
+
+.topview{
+  position: relative;
+  height: calc(130vh + 65px);
+  min-height: 983px;
+  &__title-area{
+    position: absolute;
+    top:36.5%;
+    left:6.59%;
+    transform:translateY(-50%);
+    @include mq(){
+      left: 5.33%;
+      transform: translateY(-75%);
+      margin-top: 20px;  
+    }
+  }
+  &__name{
+    font-family: メイリオ, Meiryo, "Hiragino Sans", ヒラギノ角ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: 0.55em;
+    animation: fade 0.2s linear forwards 0.8s;
+    opacity: 0;
+    @include mq(){
+      font-size: 1.15rem;
+      letter-spacing: 0.36em;
+      line-height: 1.75;
+    }
+  }
+  &__copy{
+    font-size: 8.2rem;
+    font-family: メイリオ, Meiryo, "Hiragino Sans", ヒラギノ角ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: 0.5em;
+    padding: 0 0 15px;
+    @include mq(){
+      font-size: 10vw;
+      letter-spacing: 0.60em;
+      padding: 0 0 8px;
+      font-weight: 500;
+    }
+    &--wrapper{
+      line-height: 1;
+      margin: 0.42em 0;
+      overflow: hidden;
+    }
+    &--1{
+      display: block;
+      transform: translateY(80px);
+      animation: ttl-up 0.8s cubic-bezier(0.76, 0.09, 0.215, 1) forwards 0.4s;
+      span{
+        color: #f28c00;
+      }
+    }
+    &--2{
+      display: block;
+      transform: translateY(80px);
+      animation: ttl-up 0.8s cubic-bezier(0.76, 0.09, 0.215, 1) forwards 0.5s;
+    }
+  }
+  &__maintxt{
+    animation: fade 0.2s linear forwards 0.8s;
+    font-size: 1.2rem;
+    letter-spacing: 0.30em;
+    font-weight: 400;
+    color: #FFFFFF;
+    opacity: 0;
+    @include mq() {
+      font-size: 0.9rem;
+      letter-spacing: 0.10em;
+    }
+  }
+  &__visual-area{
+    @include mq() {
+      padding-top: 0;
+      margin-top: 0px;
+      width: 100%;
+      top: 51vh;
+      height: calc(50vh + 30px);
+      position: absolute;
+    }
+    position: absolute;
+    width:95.6%;
+    top:36.5%;
+    left:0;
+    padding-top: 65px;
+  }
+  &__img{
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    transition: .3s all;
+    @include mq() {
+      height: 130%;
+      width: auto;
+      display: flex;
+      justify-content: center;
+      img{
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+  .scroll{
+    @include _scroll-area(36.5%, 9%);
+    @include mq() {
+      @include _scroll-area(0%, 4.5%);
+    }
+  }
+}
+
+
+.about{
+  overflow: hidden;
+  &::before{
+    content: "";
+    width: 86.5%;
+    height: calc(100% + 210px);
+    background: #fff3e2;
+    position: absolute;
+    top: -210px;
+    right: 0;
+    z-index: -1;
+    @include mq() {
+      width: 75%;
+      height: calc(100% - 80px);
+      top: 80px;
+    }
+  }
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 140px;
+  @include mq() {
+    display: block;
+    padding: 0 0 80px;
+    margin-top:-70px;
+  }
+  &__video-area{
+    width: 33%;
+    height: 640px;
+    margin-right: 10%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    @include mq() {
+      width: 93%;
+      height: 220px;
+      margin: 0 0 15px;
+    }
+    &::before{
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: #f28c00;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform-origin: right center;
+      z-index: 1;
+    }
+    &::after{
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: white;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform-origin: right center;
+      z-index: 1;
+    }
+    video{
+      width: 100%;
+    }
+  }
+  &__txt-area{
+    max-width: 575px;
+    padding: 60px 0;
+    position: relative;
+    font-size: 1.7rem;
+    @include mq() {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 30px 5.66% 0;
+    }
+    &::before{
+      position: absolute;
+      display: block;
+      content:"";
+      height: 1px;
+      width: 30px;
+      background-color: #f28c00;
+      left:0;
+      top:0;
+      @include mq() {
+        left:5.66%;
+      }
+    }
+    p{
+      margin-bottom: 1.5em;
+      @include mq() {
+        padding-right: 10%;
+        font-size: 1.4rem;
+        line-height: 2.2;
+      }
+    }
+  }
+  &__title{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    font-family: メイリオ, Meiryo, "Hiragino Sans", ヒラギノ角ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 2.0rem;
+    letter-spacing: 0.35em;
+    transform: rotate(90deg);
+    transform-origin: left top;
+    line-height: 1;
+    margin: 75px 0 0 75px;
+    @include mq() {
+      left: 93%;
+      font-size: 1.6rem;
+      letter-spacing: 0.45em;
+      margin: 35px 0 0 0;
+    }
+  }
+  &__btn{
+    margin-top: 50px;
+    margin-bottom: 0;
+    @include mq() {
+      text-align: center;
+    }
+    .link-btn{
+      @include _link-btn;
+    }
+  }
+}
+
+
+.works{
+  overflow: hidden;
+  position: relative;
+  &::before{
+    content: "";
+    width: 86.5%;
+    height: calc(100% - 100px);
+    background: #fff3e2;
+    position: absolute;
+    top: -210px;
+    right: 0;
+    z-index: -1;
+    @include mq() {
+      display: none;
+    }
+  }
+  &__main{
+    padding-top: 80px;
+    align-items: center;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    @include mq() {
+      padding: 0;
+      display: block;
+    }
+  }
+  &__txtarea{
+    width: 33%;
+    box-sizing: border-box;
+    padding-left: 6.588%;
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 1000;
+    @include mq() {
+      padding: 0 0 0 5.66%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+      color: #FFFFFF;
+      width: 100%;
+    }
+  }
+  &__title{
+    position: relative;
+    padding-bottom: 40px;
+    padding-left: 5px;
+    margin-bottom: 50px;
+    @include mq() {
+      padding: 0;
+      margin: 0;
+    }
+    span{
+      position: relative;
+      display: block;
+      font-family: メイリオ, Meiryo, "Hiragino Sans", ヒラギノ角ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.55em;
+      font-size: 2.8rem;
+      line-height: 1.5;
+      @include mq() {
+        font-size: 2.3rem;
+      }
+    }
+    &:after{
+      position: absolute;
+      content: "";
+      width: 110%;
+      height: 1px;
+      background: #1c1f22;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      @include mq(){
+        background: white;
+        bottom:50%;
+        width: 100vw;
+        left:120px;
+      }
+    }
+  }
+  &__dl{
+    font-family: メイリオ, Meiryo, "Hiragino Sans", ヒラギノ角ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-left: 40px;
+    margin-top: 20px;
+    letter-spacing: 0.25em;
+    line-height: 2;
+    position: relative;
+    @include mq() {
+      margin-top: 0;
+      padding-left: 25px;
+      letter-spacing: 0.15em;
+    }
+  }
+  &__dt{
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+    letter-spacing: 0.25em;
+    position: relative;
+    @include mq() {
+      line-height: 1;
+      margin-top: 10px;
+      font-size: 1.8rem;
+    }
+    &::before{
+      position: absolute;
+      content: "";
+      width: 20px;
+      height: 1px;
+      background: #1c1f22;
+      position: absolute;
+      left: -40px;
+      top: 50%;
+      z-index: 1;
+      @include mq() {
+        background: white;
+        width: 10px;
+        left: -20px;
+      }
+    }
+  }
+  &__dd{
+    &--1, &--2{
+      font-size: 1.2rem;
+    }
+    &--2{
+      display: inline-block;
+    }
+  }
+  &__link{
+    margin-top: 20px;
+    position: relative;
+    display: inline-block;
+    font-weight: 600;
+    padding-right: 40px;
+    &::after{
+      position: relative;
+      content: "";
+      width: 20px;
+      height: 1px;
+      background: #1c1f22;
+      position: absolute;
+      right: 0;
+      top: 50%;
+    }
+    @include mq() {
+      display: none;
+    }
+  }
+  &__img{
+    width: 67%;
+    height: 576px;
+    overflow: hidden;
+    transition: all .3s;
+    position: relative;
+    &:hover{
+      transform: scale(0.95, 0.95);
+    }
+    a{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    @include mq() {
+      //position: absolute;
+      //height: 300px;
+      width: 100%;
+      height: auto;
+    }
+    img{
+      @include mq() {
+        width: 100%;
+      }
+    }
+    &::before{
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: #f28c00;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform-origin: right center;
+      z-index: 1;
+    }
+    &::after{
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: #f28c00;
+      position: absolute;
+      left: 0;
+      top: 0;
+      pointer-events: none;
+    }
+  }
+  &__list{
+    padding: 0 0 100px 6.6%;
+    position: relative;
+    &::before{
+      content: "";
+      width: 150vw;
+      height: 50%;
+      background: #fff3e2;
+      position: absolute;
+      left:-50px;
+      z-index: -1;
+      @include mq() {
+        display: none;
+      }
+    }
+    @include mq() {
+      margin-top: -30px;
+      padding: 0 0 80px 15px;
+    }
+    &::before{
+      position: absolute;
+      height: calc(100% + 140px);
+      top: -140px;
+      background: #fff3e2;
+      mix-blend-mode: multiply;
+      z-index: 1;
+    }
+  }
+  &__slider{
+    position: relative;
+    z-index: 2;
+    display: block;
+    user-select: none;
+    touch-action: pan-y;
+    @include mq() {
+      padding-bottom: 10px;
+    }
+    .slick-prev, .slick-next{
+      position: absolute;
+      top: 15px;
+      width: 34px;
+      height: 27px;
+      display: block;
+      cursor: pointer;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 14px auto;
+      z-index: 999;
+      user-select: none;
+      @include mq() {
+        display: none;
+      }
+      &::before{
+        opacity:0;
+        color:inherit;
+      }
+    }
+    .slick-prev{
+      background-image: url(../img/arrow_prev.svg);
+      left:0px;
+      &:hover{
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 14px auto;
+        background-image: url(../img/arrow_prev.svg);
+        left:0px;
+      }
+      &:focus{
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 14px auto;
+        background-image: url(../img/arrow_prev.svg);
+        left:0px;
+      }
+    }
+    .slick-next{
+      background-image: url(../img/arrow_next.svg);
+      left:65px;
+      &:hover{
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 14px auto;
+        background-image: url(../img/arrow_next.svg);
+        left:65px;
+      }
+      &:focus{
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 14px auto;
+        background-image: url(../img/arrow_next.svg);
+        left:65px;
+      }
+    }
+    .work{
+      &__item{
+        max-width: 480px;
+        margin-top: 50px;
+        margin-left: 50px;
+        float:left;
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+        &:hover .work__thumb{
+          transform:scale(0.97,0.97);
+        }
+        &:hover .work__thumb img{
+          transform:scale(1.15,1.15);
+        }
+        @include mq() {
+          width: 255px;
+          margin-left: 10px;
+        }
+        a{
+          overflow: hidden;
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+        }
+      }
+      &__thumb{
+        margin: auto;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        transition: all .3s;
+        vertical-align: baseline;
+        img{
+          transition: all .3s;
+        }
+      }
+      &__num{
+        position: absolute;
+        display: inline-block;
+        font-family: メイリオ, Meiryo, "Hiragino Sans", ヒラギノ角ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.25em;
+        line-height: 1;
+        top:15px;
+        right: -85px;
+        transform: rotate(90deg);
+        transform-origin: left top;
+        padding-left: 35px;
+        color:white;
+        @include mq() {
+          font-size: 1rem;
+          right:-65px
+        }
+        &::before{
+          position: absolute;
+          content: "";
+          width: 20px;
+          height: 1px;
+          background: #FFFFFF;
+          left: 0;
+          @include mq() {
+            top:5px;
+          }
+        }
+      }
+      &__title{
+        font-family: メイリオ, Meiryo, "Hiragino Sans", ヒラギノ角ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        padding-left: 40px;
+        margin-top: 20px;
+        letter-spacing: 0.25em;
+        line-height: 2;
+        @include mq() {
+          margin-top: 5px;
+          padding-left: 20px;
+        }
+        dt{
+          font-size: 1.8rem;
+          font-weight: 600;
+          position: relative;
+          &::before{
+            content: "";
+            width: 20px;
+            height: 1px;
+            background: #1c1f22;
+            position: absolute;
+            left: -40px;
+            top: 50%;
+            @include mq() {
+              width: 10px;
+              left:-20px;
+            }
+          }
+        }
+        dd{
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+  &__btn{
+    text-align: right;
+    padding-right: 6.6%;
+    position: relative;
+    margin-top: 50px;
+    @include mq() {
+      text-align: center;
+      padding-right: 15px;
+    }
+    .link-btn{
+      @include _link-btn;
+    }
+  }
+}
+
+
+
+.service{
+  position: relative;
+  text-align: center;
+  padding: 100px 0 120px;
+  @include mq() {
+    padding: 60px 0 80px;
+  }
+  &.on::before{
+    animation: ef-scaleX 0.5s cubic-bezier(0.76, 0.09, 0.215, 1) forwards;
+  }
+  &::before{
+    display: block;
+    content: "";
+    width: 100%;
+    height: 53%;
+    background: #ffcb83;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: left center;
+    z-index: -1;
+    @include mq() {
+      height: 23%;
+    }
+  }
+  &__title{
+    font-family: メイリオ, Meiryo, "Hiragino Sans", ヒラギノ角ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    color: white;
+    font-size: 2.8rem;
+    line-height: 1.5;
+    letter-spacing: 0.55em;
+    @include mq() {
+      padding-left: 5.66%;
+      padding-right: 5.66%;
+      letter-spacing: 0.4em;
+      font-size: 2rem;
+    }
+  }
+  &__exp{
+    font-family: メイリオ, Meiryo, "Hiragino Sans", ヒラギノ角ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 30px 0 50px;
+    font-weight: 400;
+    color: white;
+    font-size: 1.6rem;
+    line-height: 2;
+    letter-spacing: 0.3em;
+    @include mq() {
+      padding-left: 5.66%;
+      padding-right: 5.66%;
+      font-size: 1.3rem;
+      letter-spacing: 0.20em;
+      padding: 15px 0 0px;
+    }
+  }
+  &__wrapper{
+    @include mq() {
+    // overflow: scroll;
+    }
+  }
+  &__list{
+    max-width: 1680px;
+    padding-left: 6.588%;
+    padding-right: 6.588%;
+    margin:0 auto;
+    //padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    @include mq() {
+      display: inline-block;
+      //width: 190%;
+      //padding: 0 20px 0 5px;
+    }
+  }
+  &__item{
+    width: 31%;
+    @include mq() {
+      width: 100%;
+      margin: 0 auto;
+      margin-top: 56px;
+      // width: 32%;
+      // padding: 0 0 0 15px;
+    }
+  }
+  &__img{
+    width: 100%;
+    @include mq() {
+      width: 80vw;
+      height: calc(80vw / 1.618);
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    img{
+      width: 100%;
+      height: 100%;
+      @include mq() {
+        height: auto;
+      }
+    }
+  }
+  &__name{
+    margin-top: 25px;
+    @include mq() {
+      margin-top: 8px;
+    }
+    &--main, &--sub{
+      font-family: メイリオ, Meiryo, "Hiragino Sans", ヒラギノ角ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 1.9rem;
+      line-height: 1.5;
+      font-weight: 600;
+    }
+    &--sub{
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+  }
+  &__detail{
+    font-size: 1.3rem;
+    line-height: 2;
+  }
+  &__btn{
+    margin-top: 50px;
+    .link-btn{
+      @include _link-btn;
+    }
+  }
+}
+
+
+
+.news{
+  overflow: hidden;
+  padding: 0 6.6%;
+  @include mq() {
+    padding: 5.8%;
+    padding-bottom: 0;
+  }
+  &__container{
+    max-width: 1680px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 120px 0 80px;
+    position: relative;
+    @include mq() {
+      display: block;
+      padding-top: 0;
+    }
+  }
+  &__titlearea{
+    padding-top: 80px;
+    @include mq() {
+      padding: 50px 0 30px;
+      text-align: center;
+    }
+  }
+  &__title{
+    font-family: メイリオ, Meiryo, "Hiragino Sans", ヒラギノ角ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.55em;
+    font-size: 2.8rem;
+    @include mq() {
+      font-size: 2rem;
+    }
+  }
+  &__listarea{
+    width: 82%;
+    @include mq() {
+      width: 100%;
+    }
+  }
+  &__list{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    @include mq() {
+      display: block;
+    }
+  }
+  &__item{
+    width: 30%;
+    margin-bottom: 70px;
+    &:hover .news__img{
+      transform:scale(0.95,0.95);
+    }
+    @include mq() {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    a{
+      @include mq() {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+  &__img{
+    width: 100%;
+    height: 25vw;
+    max-height:496px;
+    min-height:328px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    transition: all .3s;
+    @include mq() {
+      width: 35%;
+      height: 38vw;
+      min-height:auto;
+    }
+    img{
+      height: 100%;
+      width: auto;
+      transition: all .3s;
+      &:hover{
+        transform:scale(1.15,1.15);
+      }
+    }
+  }
+  &__txtarea{
+    padding: 15px 5px 0;
+    @include mq() {
+      width: 60%;
+      padding-top: 0;
+    }
+  }
+  time, &__category{
+    display: inline-block;
+    font-family: メイリオ, Meiryo, "Hiragino Sans", ヒラギノ角ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #767676;
+    letter-spacing: 0.2em;
+  }
+  &__category{
+    padding-left: 20px;
+  }
+  &__name{
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.12em;
+    padding: 5px 0 15px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 5px 0 15px;
+    margin-bottom: 10px;
+    position: relative;
+    @include mq() {
+      font-size: 1.3rem;
+    }
+    &:after{
+      content: "";
+      width: 20px;
+      height: 1px;
+      background: #1c1f22;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+  &__author{
+    font-family: メイリオ, Meiryo, "Hiragino Sans", ヒラギノ角ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.20em;
+    font-size: 1.3rem;
+  }
+  &__btn{
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    .link-btn{
+      @include _link-btn;
+    }
+    @include mq() {
+      position: static;
+      display: block;
+      text-align: center;
+      margin-top: 40px;
+    }
+  }
+}
+
+
+.insta{
+  overflow: hidden;
+  margin-top: 120px;
+  padding: 60px 4.4% 100px 4.4%;
+  @include mq() {
+    margin-top: 0;
+    padding: 0 5.66% 60px;
+  }
+  &__title{
+    overflow: hidden;
+    text-align: center;
+    font-family: メイリオ, Meiryo, "Hiragino Sans", ヒラギノ角ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.55em;
+    font-size: 2.8rem;
+    line-height: 1.5;
+    @include mq() {
+      font-size: 2.2rem;
+      letter-spacing: 0.20em;
+    }
+  }
+  &__list{
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    @include mq() {
+      width: 100%;
+      flex-wrap: wrap;
+      height: auto;
+      &::after{
+        padding-top: 100%;
+      }
+    }
+  }
+  &__item{
+    width: 19.5%;
+    transition:all .3s;
+    height: 18vw;
+    min-height: 228px;
+    overflow: hidden;
+    &:hover{
+      transform:scale(0.95, 0.95);
+    }
+    @include mq() {
+      width: 49.5%;
+      height: 42vw;
+      overflow: hidden;
+
+      &:nth-child(5){
+        display: none;
+      }
+    }
+  }
+  &__img{
+    height: 100%;
+    overflow: hidden;
+    @include mq() {
+      //height: 45vw;
+    }
+    .item{
+      height: 100%;
+      .thumb{
+        height: 100%;
+        img{
+          height: 100%;
+          width: auto;
+           object-fit: cover;
+        }
+      }
+    }
+  }
+  &__btn{
+    margin-top: 50px;
+    text-align: center;
+    .link-btn{
+      @include _link-btn;
+    }
+  }
+}
+

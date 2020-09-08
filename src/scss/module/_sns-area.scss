@@ -1,0 +1,29 @@
+
+.sns-area{
+  text-align: center;
+  padding: 100px 6.588% 140px;
+  @include mq(){
+    padding: 40px 5.9% 70px;   
+  }
+  &__title{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    margin-bottom: 20px;
+  }
+  &__list{
+    display: flex;
+    justify-content: center;
+  }
+  &__item{
+    width: 50px;
+    margin: 0 15px;
+    background-color: black;
+    border-radius: 50%;
+    @include mq(){
+      width: 40px;
+      margin: 0 10px;
+    }
+  }
+}

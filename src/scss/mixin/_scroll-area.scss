@@ -1,0 +1,61 @@
+
+@mixin _scroll-area($top, $right){
+  width: 12px;
+  height: 300px;
+  position: absolute;
+  top: $top;
+  right: $right;
+  transform: translateY(-45%);
+  @include mq() {
+    width: 10px;
+    height: 200px;
+    top: inherit;
+    bottom: 25%;
+    right: 4.5%;
+    transform: translateY(0);
+    color:white;
+  }
+  p{
+    position: absolute;
+    top: 0;
+    left: 12px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    letter-spacing: 0.3em;
+    transform:rotate(90deg);
+    transform-origin:left top;
+    line-height: 1;
+    z-index: 9999;
+    @include mq() {
+      font-size: 1.0rem;
+      letter-spacing: 0.3em;
+      color: #FFFFFF;
+      font-weight: 300;
+    }
+  }
+  &__bar{
+    &--1, &--2{
+      display: block;
+      position: absolute;
+      bottom: 0px;
+      left: 6px;
+      width: 1px;
+      height: 230px;
+      background: rgba(51,51,51,0.10);
+      pointer-events: none;
+      @include mq() {
+        background: rgba(255, 255, 255, 0.40);
+        height: 135px;
+      }
+    }
+    &--2{
+      background: rgba(51,51,51,0.40);
+      transform: scaleY(0);
+      animation: scroll-bar 3s ease-in-out infinite forwards;
+      @include mq() {
+        background: white;
+      }
+    }
+  }
+}

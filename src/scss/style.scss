@@ -1,0 +1,36 @@
+
+//base (リセットCSS、html.body.a.img等設定)
+@import './base/reset';
+@import './base/base';
+
+//setting (CSSアニメーション設定、ローダー設定)
+@import './setting/animation';
+@import './setting/loader';
+
+//module (全ページ共通モジュール設定)
+@import './module/header';
+@import './module/background-img';
+@import './module/footer';
+
+//module except top (トップページ以外での共通モジュール設定)
+@import './module/container';
+@import './module/page-title';
+@import './module/page-link';
+@import './module/cursor';
+
+//modulu single (個別ページの共通モジュール)
+@import './module/single-pager';
+@import './module/single-title';
+@import './module/sns-area';
+
+//page (各ページのスタイル)※共通部除く
+@import './page/top';
+@import './page/about';
+@import './page/works';
+@import './page/works_single';
+@import './page/service';
+@import './page/news';
+@import './page/news_single';
+@import './page/recruit';
+@import './page/contact';
+@import './page/privacypolicy';

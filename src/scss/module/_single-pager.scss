@@ -1,0 +1,194 @@
+
+.single-pager{
+  &__index{
+    background: #88909b;
+    a{
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      font-size: 2.0rem;
+      padding: 120px 0;
+      letter-spacing: 0.25em;
+      color: #FFFFFF;
+      position: relative;    
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      @include mq(){
+        padding: 60px 0;
+        font-size: 1.4rem;
+        letter-spacing: 0.25em;
+      }
+      &::before{
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transition: all .5s;
+        background: #494c4e;
+        transform-origin: left top;
+      }
+      &:hover::before{
+        width: 100%;
+      }
+      .txt{
+        padding-right: 40px;
+        position: relative;
+        &::after{
+          position: absolute;
+          content: "";
+          width: 20px;
+          height: 1px;
+          background: #FFFFFF;
+          right: 0;
+          top: 50%;
+        }
+      }
+    }
+  }
+  &__list{
+    display: flex;
+    justify-content: space-between;
+    height: 380px;
+    @include mq(){
+      height: 280px;    
+    }
+  }
+  &__item{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    &::before{
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: #88909b;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform-origin: right center;
+      z-index: 1;
+      animation: ef-mask 0.85s cubic-bezier(0.76, 0.09, 0.215, 1) forwards;
+    }
+    &:hover .thumb{
+      width: 95%;
+      height: 95%;
+    }
+  }
+  &__thumb{
+    //display: block;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: .3s all;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::before{
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: rgba(0,0,0,0.60);
+      z-index: 1;
+    }
+    img{
+      object-fit: cover;
+    }
+  }
+  &__txtarea{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FFFFFF;
+    z-index: 2;
+    line-height: 1.75;
+    letter-spacing: 0.25em;
+    left: 6.588%;
+    padding: 0 25% 0 70px;
+    @include mq(){
+      left:4%;
+      padding: 0 10px 0 25px;
+    }
+    &.next::before{
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: #FFFFFF;
+      position: absolute;
+      top: 50%;
+      left:0;
+      @include mq(){
+        width: 10px;
+      }
+    }
+    &.prev{
+      text-align: right;
+      right: 6.588%;
+      padding: 0 70px 0 25%;
+      @include mq(){
+        right:4%;
+        padding: 0 24px 0 10px;
+      }
+      &::after{
+        content: "";
+        width: 30px;
+        height: 1px;
+        background: #FFFFFF;
+        position: absolute;
+        top: 50%;
+        right:0;
+        @include mq(){
+          width: 10px;
+        }
+      }
+    }
+  }
+  &__pn{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.35em;
+    @include mq(){
+      font-size: 1rem;
+      margin-bottom: 10px;
+      letter-spacing: 0.35em;
+    }
+  }
+  &__name{
+    font-size: 1.8rem;
+    font-weight: 600;
+    @include mq(){
+      font-size: 1.4rem;
+      margin-bottom: 5px;
+    }
+  }
+  &__category, &__time{
+    font-size: 1.2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 500;
+    margin-top: 10px;
+    @include mq(){
+      font-size: 1rem;
+      margin-top: 5px;
+    }
+  }
+  &__category{
+    display: inline-block;
+  }
+}

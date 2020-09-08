@@ -1,0 +1,118 @@
+
+.contact-page{
+  margin-bottom: 120px;
+  text-align: center;
+  &__container{
+    padding: 0 6.6%;
+    @include mq(){
+      padding: 0 5.7%;
+    }
+  }
+  &__exp{
+    font-size: 1.6rem;
+    @include mq(){
+      font-size: 1.4rem;
+    }
+  }
+  &__mail-btn{
+    margin: 0 auto;
+    margin-top: 45px;
+    width: 450px;
+    line-height: 78px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border: 1px solid #1c1f22;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include mq(){
+      width: 100%;
+    }
+  }
+  .mail-img{
+    width: 30px;
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+  }
+  &__mail{
+    display: inline-block;
+    background-size: 24px auto;
+  }
+  &__formarea{
+    max-width: 1080px;
+    margin: 0 auto;
+    margin-top: 70px;
+    @include mq(){
+      margin-top: 60px;
+    }
+  }
+  &__item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0 10px;
+    @include mq(){
+      display: block;
+      text-align: left;
+    }
+    label{
+      font-weight: 500;
+      span{
+        color:red;
+        margin-left: 5px;
+      }
+      @include mq(){
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+    select, input, textarea{
+      background: #f5f6f7;
+      padding: 0 30px;
+      width: 830px;
+      height: 90px;
+      font-size: 1.6rem;
+      text-align: left;
+      position: relative;
+      &:focus{
+        border:1px solid orange;
+      }
+      @include mq(){
+        width: 100%;
+      }
+    }
+    textarea{
+      height: 290px;
+      padding-top: 15px;
+    }
+  }
+  &__btn{
+    margin-top: 20px;
+    color:white;
+    background:black;
+    width: 460px;
+    height: 70px; 
+    @include mq(){
+      width: 100%;
+    }
+  }
+}
+.select{
+  position: relative;
+  &::after{
+    position: absolute;
+    display: block;
+    content:"";
+    height:18px;
+    width: 18px;
+    right:30px;
+    top:50%;
+    transform:translateY(-50%);
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    transform:rotate(135deg);
+    z-index: 1000;
+  }
+}

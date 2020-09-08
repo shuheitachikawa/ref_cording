@@ -1,0 +1,41 @@
+
+.cursor,
+.follower {
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	transition: transform ease .2s;
+	@include mq() {
+		display: none;
+	}
+}
+.cursor {
+	width: 8px;
+	height: 8px;
+	background-color: #f28c00;
+	z-index: 99999;
+}
+.follower {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40px;
+	height: 40px;
+	border: 1px solid #ffcb83;
+	z-index: 99998;
+	text-align: center;
+	mix-blend-mode: multiply;
+	//opacity: 0;
+}
+.cursor.is-active {
+	transform: scale(1.2);
+}
+.follower.is-active {
+	transform: scale(3);
+	background: #ffcb83;
+}
+.motion .follower {
+	animation: fade .2s forwards 1s;
+}
