@@ -2524,6 +2524,17 @@ span.msk {
   min-height: 983px;
 }
 
+.topview__comment {
+  background: #c5c5c5;
+  font-size: 10px;
+  font-size: 1rem;
+  position: absolute;
+  top: 20%;
+  padding: 10px;
+  color: red;
+  left: 70%;
+}
+
 .topview__title-area {
   position: absolute;
   top: 36.5%;
@@ -6405,6 +6416,10 @@ body.galleria .single-title {
     -webkit-transform: scale(0.6);
             transform: scale(0.6);
   }
+  .topview__comment {
+    left: 5.33%;
+    top: 15%;
+  }
   .topview__title-area {
     left: 5.33%;
     -webkit-transform: translateY(-75%);
@@ -6417,7 +6432,7 @@ body.galleria .single-title {
     line-height: 1.75;
   }
   .topview__copy {
-    font-size: 10vw;
+    font-size: 3.5rem;
     letter-spacing: 0.60em;
     padding: 0 0 8px;
     font-weight: 500;
@@ -6430,7 +6445,7 @@ body.galleria .single-title {
     padding-top: 0;
     margin-top: 0px;
     width: 100%;
-    top: 51vh;
+    top: 49.5vh;
     height: calc(50vh + 30px);
     position: absolute;
   }
